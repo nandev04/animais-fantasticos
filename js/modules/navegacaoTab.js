@@ -1,22 +1,26 @@
-export default function initTabNav() {
-  const tabMenu = document.querySelectorAll('[data-tab="menu"] li');
-  const tabcontent = document.querySelectorAll('[data-tab="content"] section');
-
-  function activeTab(index) {
-    tabcontent.forEach((item) => {
-      item.classList.remove('ativo');
-    });
-    const direcao = tabcontent[index].dataset.anime;
-    tabcontent[index].classList.add('ativo', direcao);
+export default class initTabNav {
+  constructor(listaMenu, listaConteudo) {
+  this.menu = document.querySelectorAll(listaMenu);
+  this.content = document.querySelectorAll(listaConteudo);
   }
 
-  if (tabcontent.length && tabMenu.length) {
-    tabcontent[0].classList.add('ativo');
-
-    tabMenu.forEach((itemMenu, index) => {
-      itemMenu.addEventListener('click', () => {
-        activeTab(index);
-      });
+  activeTab(index) {
+    this.content.forEach((item) => {
+      item.classList.remove('ativo');
     });
+    const direcao = this.content[index].dataset.anime;
+    this.content[index].classList.add('ativo', direcao);
+  }
+
+  init() {
+    if (this.content.length && this.menu.length) {
+      this.content[0].classList.add('ativo');
+  
+      this.menu.forEach((itemMenu, index) => {
+        itemMenu.addEventListener('click', () => {
+          this.activeTab(index);
+        });
+      });
+    }
   }
 }
