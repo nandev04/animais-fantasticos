@@ -3,7 +3,7 @@ import initAnimaScroll from './modules/animacaoScroll.js';
 import Accordion from './modules/animaAccordion.js';
 import TabNav from './modules/navegacaoTab.js';
 import Modal from './modules/modal.js';
-import initToolTip from './modules/toolTip.js';
+import ToolTip from './modules/toolTip.js';
 import initDropdownMenu from './modules/dropdownMenu.js';
 import initMenuMobile from './modules/menuMobile.js';
 import initHorarioFuncionamento from './modules/horarioFuncionamento.js';
@@ -18,6 +18,8 @@ const tabNav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section'
 tabNav.init();
 const modal = new Modal('[data-modal="container"]', '[data-modal="abrir"]', '[data-modal="fechar"]')
 modal.init();
+const tooltip = new ToolTip('[data-toolTip]')
+tooltip.init();
 
 
 
@@ -25,7 +27,6 @@ modal.init();
 
 
 initAnimaScroll();
-initToolTip();
 initDropdownMenu();
 initMenuMobile();
 initHorarioFuncionamento();
