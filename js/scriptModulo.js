@@ -1,5 +1,5 @@
 import ScrollSuave from './modules/scrollSuave.js';
-import initAnimaScroll from './modules/animacaoScroll.js';
+import AnimaScroll from './modules/animacaoScroll.js';
 import Accordion from './modules/animaAccordion.js';
 import TabNav from './modules/navegacaoTab.js';
 import Modal from './modules/modal.js';
@@ -20,10 +20,12 @@ const modal = new Modal('[data-modal="container"]', '[data-modal="abrir"]', '[da
 modal.init();
 const tooltip = new ToolTip('[data-toolTip]');
 tooltip.init();
+const animascroll = new AnimaScroll('[data-anime="scroll"]');
+animascroll.init();
 
-initAnimaScroll();
 initDropdownMenu();
 initMenuMobile();
 initHorarioFuncionamento();
+
 fetchAnimais('animaisapi.json', '.numeros-grid');
 fetchBitcoin('https://www.blockchain.com/pt/ticker', '.btc-preco');
