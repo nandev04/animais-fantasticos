@@ -4,7 +4,7 @@ import Accordion from './modules/animaAccordion.js';
 import TabNav from './modules/navegacaoTab.js';
 import Modal from './modules/modal.js';
 import ToolTip from './modules/toolTip.js';
-import initDropdownMenu from './modules/dropdownMenu.js';
+import DropdownMenu from './modules/dropdownMenu.js';
 import initMenuMobile from './modules/menuMobile.js';
 import initHorarioFuncionamento from './modules/horarioFuncionamento.js';
 import fetchAnimais from './modules/fetchAnimais.js';
@@ -22,8 +22,9 @@ const tooltip = new ToolTip('[data-toolTip]');
 tooltip.init();
 const animascroll = new AnimaScroll('[data-anime="scroll"]');
 animascroll.init();
+const dropdownmenu = new DropdownMenu('[data-dropdown]', 'dropdown-ativo');
+dropdownmenu.init();
 
-initDropdownMenu();
 initMenuMobile();
 initHorarioFuncionamento();
 
