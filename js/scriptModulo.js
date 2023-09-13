@@ -5,7 +5,7 @@ import TabNav from './modules/navegacaoTab.js';
 import Modal from './modules/modal.js';
 import ToolTip from './modules/toolTip.js';
 import DropdownMenu from './modules/dropdownMenu.js';
-import initMenuMobile from './modules/menuMobile.js';
+import MenuMobile from './modules/menuMobile.js';
 import initHorarioFuncionamento from './modules/horarioFuncionamento.js';
 import fetchAnimais from './modules/fetchAnimais.js';
 import fetchBitcoin from './modules/fetchBitcoin.js';
@@ -24,8 +24,9 @@ const animascroll = new AnimaScroll('[data-anime="scroll"]');
 animascroll.init();
 const dropdownmenu = new DropdownMenu('[data-dropdown]', 'dropdown-ativo');
 dropdownmenu.init();
+const menumobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]', 'active');
+menumobile.init();
 
-initMenuMobile();
 initHorarioFuncionamento();
 
 fetchAnimais('animaisapi.json', '.numeros-grid');

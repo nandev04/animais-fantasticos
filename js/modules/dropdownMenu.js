@@ -10,7 +10,6 @@ export default class DropdownMenu {
   }
 
   activeDropDown(event) {
-    console.log(event.currentTarget);
     event.preventDefault(this.liDropDown);
     event.currentTarget.classList.toggle(this.classList);
     outsideClick(event.currentTarget, this.events, () => {
