@@ -29,5 +29,5 @@ menumobile.init();
 const horariofuncionamento = new HorarioFuncionamento('[data-semana]', 'aberto');
 horariofuncionamento.init();
 
-fetchAnimais('animaisapi.json', '.numeros-grid');
+fetchAnimais('./animaisapi.json', '.numeros-grid');
 fetchBitcoin('https://www.blockchain.com/pt/ticker', '.btc-preco');
