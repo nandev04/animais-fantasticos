@@ -5,9 +5,12 @@ export default class AnimaScroll {
     this.sections = document.querySelectorAll(section);
     this.windowMetade = window.innerHeight * 0.6;
 
+    // Faz o bind do checkDistance e usa o debounce
     this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }
 
+  // Pega a distância de cada sessão em relação ao topo
+  // e retorna o elemento com a distância do topo + área segura
   getDistance() {
     this.distance = [...this.sections].map((section) => {
       const offset = section.offsetTop;
@@ -18,6 +21,7 @@ export default class AnimaScroll {
     });
   }
 
+  // Compara a distância e altera as classes
   checkDistance() {
     this.distance.forEach((item) => {
       if (window.scrollY > item.offset) {
@@ -28,6 +32,7 @@ export default class AnimaScroll {
     });
   }
 
+  // Inicia a função
   init() {
     if (this.sections.length) {
       this.getDistance();
@@ -37,6 +42,7 @@ export default class AnimaScroll {
     return this;
   }
 
+  // Função para parar caso precise
   stop() {
     window.removeEventListener('scroll', this.checkDistance);
   }

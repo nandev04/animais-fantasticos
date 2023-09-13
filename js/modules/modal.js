@@ -1,5 +1,5 @@
 export default class Modal {
-  constructor(modalContainer, loginButton, closeButton){
+  constructor(modalContainer, loginButton, closeButton) {
     this.modalContainer = document.querySelector(modalContainer);
     this.loginButton = document.querySelector(loginButton);
     this.fecharButton = document.querySelector(closeButton);
@@ -13,7 +13,7 @@ export default class Modal {
     this.modalContainer.classList.toggle('ativo');
   }
 
-  // ativa o evento toggleModal 
+  // ativa o evento toggleModal
   eventToggleModal(event) {
     event.preventDefault();
     this.toggleModal();

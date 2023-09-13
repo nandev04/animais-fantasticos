@@ -1,3 +1,4 @@
+// Limpa um pouco as funções na fila de execução
 export default function debounce(callback, delay) {
   let timer;
   return (...args) => {

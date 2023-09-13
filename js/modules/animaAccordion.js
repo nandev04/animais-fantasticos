@@ -16,13 +16,13 @@ export default class Accordion {
     });
   }
 
-  // Iniciar função
+  // Inicia a função
   init() {
-    //Adicionar a classe ativo no primeiro item da accordion list
+    // Adiciona a classe ativo no primeiro item da accordion list
     if (this.accordionList.length) {
-      this.toggleAccordion(this.accordionList[0])
+      this.toggleAccordion(this.accordionList[0]);
       this.addAcordionEvent();
     }
     return this;
-  }  
+  }
 }
